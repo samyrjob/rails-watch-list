@@ -5,9 +5,19 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+require "open-uri"
+
 Bookmark.destroy_all
 Movie.destroy_all
 List.destroy_all
+
+
+
+# file = URI.open("https://cdn.pixabay.com/photo/2016/08/17/22/22/kapow-1601675__480.png")
+# list10 = List.new(name: "NES")
+# list10.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+# list10.save
 
 movie1 = Movie.create(title: "Wonder Woman 1984", overview: "Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s", poster_url: "https://image.tmdb.org/t/p/original/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg", rating: 6.9)
 movie2 = Movie.create(title: "The Shawshank Redemption", overview: "Framed in the 1940s for double murder, upstanding banker Andy Dufresne begins a new life at the Shawshank prison", poster_url: "https://image.tmdb.org/t/p/original/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg", rating: 8.7)
@@ -22,6 +32,20 @@ list2 = List.create!(name: "marvel - dc comics")
 list3 = List.create!(name: "action")
 
 list4 = List.create!(name: "others")
+
+file1 = URI.open("https://cdn.pixabay.com/photo/2016/08/17/22/22/kapow-1601675__480.png")
+file2 = URI.open("https://cdn.pixabay.com/photo/2016/08/17/22/22/kapow-1601675__480.png")
+file3 = URI.open("https://cdn.pixabay.com/photo/2016/08/17/22/22/kapow-1601675__480.png")
+
+list1.photo.attach(io: file1, filename: "nes.png", content_type: "image/png")
+list1.save
+
+list2.photo.attach(io: file2, filename: "nes.png", content_type: "image/png")
+list2.save
+
+list3.photo.attach(io: file3, filename: "nes.png", content_type: "image/png")
+list3.save
+
 
 
 Bookmark.create!(comment: "ce film est génial", movie_id: movie1.id, list_id: list1.id)

@@ -35,3 +35,4 @@
 
 /node_modules
 .env*
+CLOUDINARY_URL=cloudinary://671728273274922:exoHX3vHwkt57X6PZRSUWFiKUp8@dynoh8xkp

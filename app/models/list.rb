@@ -3,7 +3,5 @@ class List < ApplicationRecord
   has_many :movies, :through => :bookmarks
   validates_uniqueness_of :name
   validates :name, presence: true
+  has_one_attached :photo
 end
-
-
-
