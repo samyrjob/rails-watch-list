@@ -10,7 +10,7 @@
       <%= movie.poster_url %>
       <br>
       <%= movie.rating %>
-      <%= link_to "delete", bookmark_path(Bookmark.find_by(movie: movie, list: @list)), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{movie.title} from your #{@list.name} list"}
+      <%= link_to "delete", bookmark_path(Bookmark.find_by(movie: movie, list: @list)), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{movie.title} from your #{@list.name} list"}%>
     </li>
 
   <% end %>
